@@ -54,17 +54,24 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
-// GANTI dengan Pixel ID kamu dari Meta Events Manager
+// Inisialisasi Meta Pixel
 fbq('init', '597287352852502');
 fbq('track', 'PageView');
-fbq('track', 'Contact'); // menandakan orang klik untuk kontak via WA
+
+// Event Contact dengan Parameter Tambahan
+fbq('track', 'Contact', {
+  content_name: 'WhatsApp Redirect Link',
+  content_category: 'Consultation Lead',
+  value: 0.00,
+  currency: 'IDR'
+});
 </script>
 <!-- End Meta Pixel Code -->
 
 <script>
-  // GANTI nomor WA dan pesan default sesuai kebutuhan
-  const waNumber = "6287852292000"; // ganti dengan nomor WA bisnis kamu (format 62xxx tanpa +)
-  const waMessage = "Halo, saya konsultasikan mobil saya";
+  // Nomor WA dan pesan default
+  const waNumber = "6287852292000";
+  const waMessage = "Halo, saya mau konsultasikan mobil saya";
   const waUrl = "https://wa.me/" + waNumber + "?text=" + encodeURIComponent(waMessage);
 
   // Redirect otomatis setelah pixel sempat fire (800ms)

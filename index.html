@@ -58,7 +58,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '597287352852502');
 fbq('track', 'PageView');
 
-// Event Contact dengan Parameter Tambahan
+// Event Contact dengan Parameter
 fbq('track', 'Contact', {
   content_name: 'WhatsApp Redirect Link',
   content_category: 'Consultation Lead',
@@ -69,15 +69,14 @@ fbq('track', 'Contact', {
 <!-- End Meta Pixel Code -->
 
 <script>
-  // Nomor WA dan pesan default
   const waNumber = "6287852292000";
-  const waMessage = "Halo, saya ingin konsultasikan mobil saya";
+  const waMessage = "Halo, saya konsultasikan mobil saya";
   const waUrl = "https://wa.me/" + waNumber + "?text=" + encodeURIComponent(waMessage);
 
-  // Redirect otomatis setelah pixel sempat fire (800ms)
+  // Redirect otomatis setelah pixel sempat fire
   setTimeout(function() {
     window.location.href = waUrl;
-  }, 800);
+  }, 1000); // dinaikkan sedikit ke 1 detik agar Pixel sempat mengirim data Contact
 </script>
 
 </body>

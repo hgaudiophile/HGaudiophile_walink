@@ -68,10 +68,9 @@ fbq('track', 'Contact'); // menandakan orang klik untuk kontak via WA
   const waUrl = "https://wa.me/" + waNumber + "?text=" + encodeURIComponent(waMessage);
 
   // Redirect otomatis setelah pixel sempat fire (800ms)
-  // SEMENTARA DIMATIKAN UNTUK TESTING - hapus tanda // di baris bawah untuk aktifkan lagi
-  // setTimeout(function() {
-  //   window.location.href = waUrl;
-  // }, 800);
+  setTimeout(function() {
+    window.location.href = waUrl;
+  }, 800);
 </script>
 
 </body>
